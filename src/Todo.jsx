@@ -4,7 +4,6 @@ import Input from "./Input";
 import React from "react";
 
 const Todo = (props) => {
-    var [list, setList] = React.useState(['Jog around the park 3x', '10 minutes meditation', 'Read for 1 hour', 'Pick up groceries', 'Complete Todo App on Frontend Mentor'])
     return (
         <div className="todo">
             <Header 
@@ -13,16 +12,22 @@ const Todo = (props) => {
             />
 
             <Input 
-            list={list}
-            setList={setList}
+            list={props.list}
+            setList={props.setList}
             mood={props.mood}
             setMood={props.setMood}
+            leftItem={props.leftItem}
+            setLeftItems={props.setLeftItems}
             />
 
             <List 
-            list={list}
+            list={props.list}
             mood={props.mood}
             setMood={props.setMood}
+            checked={props.checked}
+            setChecked={props.setChecked}
+            leftItem={props.leftItem}
+            setLeftItems={props.setLeftItems}
             />
         </div>
     )

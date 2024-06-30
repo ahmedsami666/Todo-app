@@ -8,6 +8,7 @@ const Input = (props) => {
             return [...prevState, value]
         })
         document.getElementsByTagName("input")[0].value = ''
+        props.setLeftItems(props.leftItem + 1)
     }
     return (
         <div className={props.mood ? 'input input-dark' : 'input'}>

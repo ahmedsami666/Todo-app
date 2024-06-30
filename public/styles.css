@@ -8,12 +8,24 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: top;
+    animation: bg-animation 1s linear alternate;
 }
 .main-dark {
     background: url(./images/bg-desktop-dark.jpg), hsl(235, 21%, 11%);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: top;
+    animation: bg-animation 0.25s linear alternate;
+}
+@keyframes bg-animation {
+    from {
+        background-position-x: -20rem;
+        opacity: 0;
+    }
+    to {
+        background-position-x: 0rem;
+        opacity: 100%;
+    }
 }
 .todo {
     width: 40%;
@@ -37,6 +49,19 @@ body {
     text-transform: uppercase;
     color: white;
     letter-spacing: 0.5rem;
+}
+.header img:active {
+    animation: mood-animation 2s linear alternate;
+}
+@keyframes mood-animation {
+    from {
+        opacity: 50%;
+        transform: rotateZ(180deg);
+    }
+    to {
+        opacity: 0%;
+        transform: rotateZ(0);
+    }
 }
 .input {
     width: 100%;
@@ -106,10 +131,21 @@ body {
     height: 1.25rem;
     border-radius: 100%;
     border: solid 1px hsl(236, 33%, 92%);
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
 }
 .checkbox-dark {
     background-color: hsl(235, 24%, 19%);
     border: solid 1px hsl(235, 19%, 35%);
+}
+.active-checked {
+    background:  linear-gradient(hsl(192, 100%, 67%) ,hsl(280, 87%, 65%));
+}
+.checked-item {
+    text-decoration: line-through;
+    color: hsl(234, 39%, 85%);
 }
 .add {
     display: grid;

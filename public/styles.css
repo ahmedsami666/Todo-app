@@ -3,8 +3,14 @@ body {
     font-family: "Josefin Sans", sans-serif;
 }
 .main {
-    padding: 8rem 0;
+    padding: 5rem 0;
     background: url(./images/bg-desktop-light.jpg), hsl(236, 33%, 92%);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+}
+.main-dark {
+    background: url(./images/bg-desktop-dark.jpg), hsl(235, 21%, 11%);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: top;
@@ -41,6 +47,9 @@ body {
     position: relative;
     z-index: 1;
 }
+.input-dark input{
+    background-color: hsl(235, 24%, 19%);
+}
 .input input {
     width: 90%;
     border: none;
@@ -56,6 +65,9 @@ body {
     color: hsl(235, 19%, 35%);
     box-shadow: black 0rem 0rem 5rem -3rem
 }
+.list-dark {
+    background-color: hsl(235, 24%, 19%);
+}
 .list-item {
     padding: 1rem;
     display: grid;
@@ -63,6 +75,13 @@ body {
     justify-items: start;
     align-items: center;
     border-bottom: solid 1px hsl(236, 33%, 92%);
+}
+.list-item-dark {
+    border-bottom: solid 1px hsl(235, 19%, 35%);;
+}
+.list-item-dark span {
+    color: white;
+    font-weight: 100;
 }
 .list-data {
     display: grid;
@@ -88,6 +107,10 @@ body {
     border-radius: 100%;
     border: solid 1px hsl(236, 33%, 92%);
 }
+.checkbox-dark {
+    background-color: hsl(235, 24%, 19%);
+    border: solid 1px hsl(235, 19%, 35%);
+}
 .add {
     display: grid;
     justify-items: center;
@@ -97,4 +120,8 @@ body {
     width: 2rem;
     height: 2rem;
     font-size: 2rem;
+}
+.add-dark {
+    background-color: hsl(235, 24%, 19%);
+    color: hsl(235, 19%, 35%);
 }

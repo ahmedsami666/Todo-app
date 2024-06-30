@@ -3,10 +3,10 @@ import CopyRights from "./CopyRights"
 import Todo from "./Todo";
 
 function App() {
-  /*Drag and drop to reorder list */
+  var [mood, setMood] = React.useState(true)
   return (
-    <div className="main">
-      <Todo />
+    <div className={mood ? 'main main-dark' : 'main'}>
+      <Todo mood={mood} setMood={setMood}/>
       <CopyRights />
     </div>
   );

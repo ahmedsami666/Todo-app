@@ -10,9 +10,9 @@ const Input = (props) => {
         document.getElementsByTagName("input")[0].value = ''
     }
     return (
-        <div className="input">
+        <div className={props.mood ? 'input input-dark' : 'input'}>
             <input type="text" placeholder="Create a new todo..." onChange={handleChange}/>
-            <div className="add" onClick={handleClick}>+</div>
+            <div className={props.mood ? 'add add-dark' : 'add'} onClick={handleClick}>+</div>
         </div> 
     )
 }

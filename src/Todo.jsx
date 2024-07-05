@@ -18,6 +18,8 @@ const Todo = (props) => {
             setMood={props.setMood}
             leftItem={props.leftItem}
             setLeftItems={props.setLeftItems}
+            active={props.active}
+            setActive={props.setActive}
             />
 
             <List 
@@ -28,6 +30,10 @@ const Todo = (props) => {
             setChecked={props.setChecked}
             leftItem={props.leftItem}
             setLeftItems={props.setLeftItems}
+            active={props.active}
+            setActive={props.setActive}
+            view={props.view}
+            setView={props.setView}
             />
         </div>
     )

@@ -73,6 +73,27 @@ const List = (props) => {
     const handleCopmleted = () => {
         props.setView('completed')
     }
+    const handleClear = () => {
+        props.setList(props.list.filter((item, index) => {
+            if (Object.values(props.active)[index] === false) {
+                var box = document.getElementById(index)
+                box.classList.remove('active-checked')
+                props.setChecked(pre => {
+                    return {
+                        ...pre, [index]: false
+                    }
+                })
+                props.setActive(pre => {
+                    return {
+                        ...pre, [index]: true
+                    }
+                })
+                return false
+            } else {
+                return item
+            }
+        }))
+    }
     return (
         <div className={props.mood ? 'list list-dark' : 'list'}>
             {props.view === 'all' ? props.list.map(createList) : null}
@@ -80,10 +101,10 @@ const List = (props) => {
             {props.view === 'completed' ? props.list.map(createCompletedList) : null}
             <div className="list-data">
                 <span>{props.leftItem} items left</span>
-                <span onClick={handleViewAll}>All</span>
-                <span onClick={handleActive}>Active</span>
-                <span onClick={handleCopmleted}>Completed</span>
-                <span>Clear Completed</span>
+                <span onClick={handleViewAll} className={props.view === 'all'? 'clicked' : null}>All</span>
+                <span onClick={handleActive} className={props.view === 'active'? 'clicked' : null}>Active</span>
+                <span onClick={handleCopmleted} className={props.view === 'completed'? 'clicked' : null}>Completed</span>
+                <span onClick={handleClear}>Clear Completed</span>
             </div>
         </div>
     )

@@ -119,7 +119,7 @@ body {
 .list-data :first-child{
     justify-self: start;
 }
-.list-data :nth-child(2){
+.clicked{
     color: hsl(220, 98%, 61%);
 }
 .list-data :last-child{

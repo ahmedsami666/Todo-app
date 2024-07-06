@@ -24,6 +24,7 @@ const Todo = (props) => {
 
             <List 
             list={props.list}
+            setList={props.setList}
             mood={props.mood}
             setMood={props.setMood}
             checked={props.checked}
